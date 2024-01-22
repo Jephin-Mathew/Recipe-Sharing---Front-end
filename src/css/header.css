@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+input.form-control {
+    outline: none;
+    box-shadow: none !important
+  }
+
+  #chatNotif {
+    margin-left: -18px;
+  }
+
+  #searchInput {
+    padding-left: 32px;
+  }
+
+
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
+.position{
+   position: absolute;
+   left: -4px;
+   top: 4px;
+}
+
+.form-control{
+    padding-left: 28px;
+}
+

@@ -1,0 +1,159 @@
+/* Profile.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .profile-container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .profile-container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .user-info {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .user-info:hover {
+    background-color: #d5d8dc;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .bio {
+    color: #555;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #3498db;
+  }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Add a button with a pop-up effect */
+  .popup-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .popup-btn:hover {
+    background-color: #297fb8;
+  }
+  
+  /* Popup styling */
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2;
+    display: none;
+  }
+  
+  /* Animation for popup */
+  .fade-in {
+    animation: fadeIn 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Add a little bounce effect */
+  .bounce {
+    animation: bounce 0.5s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .list-item {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .list-item:hover {
+    background-color: #d5d8dc;
+  }
+  
+  .error {
+    color: #ff0000;
+  }
+  
+  .loading {
+    font-style: italic;
+    color: #777;
+  }
+  
