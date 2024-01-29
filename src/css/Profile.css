@@ -156,4 +156,7 @@ body {
     font-style: italic;
     color: #777;
   }
+  .fixed-height {
+    height: 220px; /* Set a fixed height for the card body */
+  }
   

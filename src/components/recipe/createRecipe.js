@@ -6,8 +6,6 @@ import '../../css/CreateRecipe.css';
 import checkAuth from '../auth/checkAuth';
 import { useSelector } from 'react-redux';
 
-
-
 function CreateRecipe() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -20,9 +18,7 @@ function CreateRecipe() {
   const navigate = useNavigate();
   const user = useSelector((store) => store.auth.user);
 
-
   function handleImageChange(event) {
-    // Handle file upload
     const file = event.target.files[0];
     setImage(file);
   }
@@ -35,17 +31,17 @@ function CreateRecipe() {
     formData.append('steps', steps);
     formData.append('cooking_hours', parseInt(cookingHours, 10));
     formData.append('cooking_minutes', parseInt(cookingMinutes, 10));
-  
-    // Ensure that difficulty level is set correctly as an integer
+
     const difficultyLevelInteger = { easy: 1, medium: 2, hard: 3 }[difficultyLevel];
     if (typeof difficultyLevelInteger === 'undefined') {
       console.error('Invalid difficulty level:', difficultyLevel);
-      return; // Abort the function if difficulty level is invalid
+      return;
     }
     formData.append('difficulty_level', difficultyLevelInteger);
-  
-    // Remove the line formData.append('image', image);
-  
+
+    // Append the image to formData
+    formData.append('image', image);
+
     axios
       .post('http://127.0.0.1:8000/api/recipes', formData, {
         headers: { Authorization: 'Bearer ' + user.token, 'Content-Type': 'multipart/form-data' },
@@ -55,10 +51,8 @@ function CreateRecipe() {
         navigate('/feed');
       })
       .catch((error) => {
-        // Log the error details
         console.error('Error adding recipe:', error);
-  
-        // Log additional details from the response, if available
+
         if (error.response) {
           console.error('Response data:', error.response.data);
           console.error('Response status:', error.response.status);
@@ -66,6 +60,7 @@ function CreateRecipe() {
         }
       });
   }
+
   return (
     <div>
       <Header />

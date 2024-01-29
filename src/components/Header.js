@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <nav className="navbar navbar-light bg-light navbar-expand-md px-3 position-relative">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="">
         Recipes
       </Link>
       <div className="w-50">
@@ -51,6 +51,11 @@ function Header() {
           <li className="nav-item mx-3">
             <Link to="/profile" className="nav-link">
               Profile
+            </Link>
+          </li>
+          <li className="nav-item mx-3">
+            <Link to="/users" className="nav-link">
+              Users
             </Link>
           </li>
           <li className="nav-item mx-3">

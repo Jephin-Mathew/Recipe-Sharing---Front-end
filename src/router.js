@@ -6,6 +6,10 @@ import Feeds from "./components/Feeds";
 import CreateRecipe from "./components/recipe/createRecipe";
 import Profile from "./components/Profile";
 import AdminDashboard from "./components/AdminDashboard";
+import ShowRecipe from "./components/recipe/showRecipe";
+import ListUsers from "./components/ListUsers";
+import ProfileUpdate from "./components/ProfileUpdate";
+
 
 
 const router = createBrowserRouter([
@@ -15,7 +19,10 @@ const router = createBrowserRouter([
     { path: 'feed', element: <Feeds/> },
     { path: 'createRecipe',element:<CreateRecipe/>},
     { path: 'profile',element: <Profile/>},
-    { path: 'admin',element: <AdminDashboard/>}
+    { path: 'showRecipe/:recipeId', element: <ShowRecipe /> },
+    { path: 'admin',element: <AdminDashboard/>},
+    { path: 'users',element: <ListUsers/>},
+    { path: 'updateprofile',element: <ProfileUpdate/>},
 ]);
 
 export default router;

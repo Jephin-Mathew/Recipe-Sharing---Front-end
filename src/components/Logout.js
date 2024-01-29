@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { removeUser } from './store/authSlice';
+import checkAuth from "./auth/checkAuth";
 
 function Logout() {
   const navigate = useNavigate();
@@ -59,4 +60,4 @@ function Logout() {
   );
 }
 
-export default Logout;
+export default checkAuth(Logout);

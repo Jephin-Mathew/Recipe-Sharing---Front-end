@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import checkAuth from "./auth/checkAuth";
 import { useSelector } from "react-redux";
 import '../css/Profile.css';
+import Header from "./Header";
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -44,38 +45,45 @@ const Profile = () => {
   const { name, bio, recipes, followers, following } = userProfile;
 
   return (
-    <div className="profile-container">
-      <h2>User Profile</h2>
-      <div className="user-info">
-        <p>Name: {name}</p>
-        <p>Bio: {bio}</p>
-      </div>
+    <div>
+      <Header/>
+      <div className="profile-container">
+        <h2>User Profile</h2>
+        <div className="user-info">
+          <p>Name: {name}</p>
+          <p>Bio: {bio}</p>
+        </div>
 
-      <div className="section">
-        <h3>Recipes</h3>
-        <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe.id}>{recipe.title}</li>
-          ))}
-        </ul>
-      </div>
+        <div className="section">
+          <h3>Recipes</h3>
+          <ul>
+            {recipes.map((recipe) => (
+              <li key={recipe.id}>{recipe.title}</li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="section">
-        <h3>Followers</h3>
-        <ul>
-          {followers.map((follower) => (
-            <li key={follower.id}>{follower.name}</li>
-          ))}
-        </ul>
-      </div>
+        <div className="section">
+          <h3>Followers</h3>
+          <ul>
+            {followers.map((follower) => (
+              <li key={follower.id}>{follower.name}</li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="section">
-        <h3>Following</h3>
-        <ul>
-          {following.map((followingUser) => (
-            <li key={followingUser.id}>{followingUser.name}</li>
-          ))}
-        </ul>
+        <div className="section">
+          <h3>Following</h3>
+          <ul>
+            {following.map((followingUser) => (
+              <li key={followingUser.id}>{followingUser.name}</li>
+            ))}
+          </ul>
+        </div>
+
+        <Link to="/updateprofile">
+          <button className="edit-profile-btn">Edit Profile</button>
+        </Link>
       </div>
     </div>
   );
